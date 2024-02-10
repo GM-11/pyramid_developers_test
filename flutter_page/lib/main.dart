@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_page/components/connect_button.dart';
 import 'package:flutter_page/components/network_button.dart';
+import 'package:flutter_page/components/services_modal.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,6 +29,7 @@ class Root extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(3, 26, 25, 1),
       appBar: AppBar(
         title: Row(
           children: [
@@ -50,6 +52,7 @@ class Root extends StatelessWidget {
           ),
         ),
       ),
+      body: ListView(children: [const ServicesModal()]),
     );
   }
 }
