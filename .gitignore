@@ -1,0 +1,16 @@
+./react-page/node_modules
+
+./flutter_page/.idea
+./flutter_page/
+
+flutter_page/.idea
+
+
+flutter_page/android/app/debug
+flutter_page/android/app/profile
+flutter_page/android/app/release
+
+
+flutter_page/ios
+flutter_page/web
+flutter_page/windows
