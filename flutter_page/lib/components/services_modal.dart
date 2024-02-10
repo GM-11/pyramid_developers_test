@@ -26,32 +26,53 @@ class _ServicesModalState extends State<ServicesModal> {
           color: const Color.fromRGBO(186, 155, 114, 1),
         ),
       ),
-      child: SizedBox(
-        height: 500,
-        width: 20,
-        child: ListView(
-          children: _services
-              .map(
-                (e) => Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Material(
-                    borderRadius: BorderRadius.circular(10),
-                    color: const Color.fromRGBO(52, 52, 52, 1),
-                    child: ListTile(
-                      trailing: IconButton(
-                        icon: const Icon(Icons.arrow_right_sharp, color: Colors.white,),
-                        onPressed: () {},
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(left: 30.0, top: 10, bottom: 10),
+              child: Text(
+                "HPAY | Services",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            Column(
+              children: _services
+                  .map(
+                    (e) => Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Material(
+                        borderRadius: BorderRadius.circular(10),
+                        color: const Color.fromRGBO(52, 52, 52, 0.7),
+                        child: ListTile(
+                          trailing: IconButton(
+                            icon: const Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {},
+                          ),
+                          title: Text(
+                            e['name']!,
+                            style: const TextStyle(
+                                color: Colors.white, fontSize: 13),
+                          ),
+                          leading: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                            child: Image.asset(e['icon']!,),
+                          ),
+                        ),
                       ),
-                      title: Text(
-                        e['name']!,
-                        style: const TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                      leading: Image.asset(e['icon']!),
                     ),
-                  ),
-                ),
-              )
-              .toList(),
+                  )
+                  .toList(),
+            ),
+          ],
         ),
       ),
     );
